@@ -1,0 +1,35 @@
+<div class="fixed z-50 inset-0 overflow-y-auto" id="modal"
+
+[ngClass]="{ hidden: !modal.isModalOpen(modalId) }"
+
+>
+    <div class="flex items-end justify-center min-h-screen pt-6 px-4 pb-20 text-center 
+      sm:block sm:p-2"  >
+      <!-- Modal BG Overlay -->
+      <div class="fixed inset-2 transition-opacity" (click)="toggleModal($event)">
+        <div class="absolute inset-2 bg-gray-800 opacity-75"></div>
+      </div>
+
+      <!-- This element is to trick the browser into centering the modal contents. -->
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8201;</span>
+
+      <div class="inline-block align-bottom bg-secondary rounded-lg text-left overflow-hidden
+        shadow-xl transform transition-all sm:my-10 sm:align-middle sm:max-w-lg sm:w-full">
+
+        <!-- Add margin if you want to see some of the overlay behind the modal-->
+        <div class="py-6 text-left px-6">
+          <!--Title-->
+          <div class="flex justify-between items-center pb-6">
+           <ng-content select="[heading]" ></ng-content>
+            <!-- Modal Close Button -->
+            <div class="modal-close cursor-pointer z-52" (click)="toggleModal($event)">
+            	&#10060;
+            </div>
+          </div>
+
+          <!-- Tabs -->
+     <ng-content></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
