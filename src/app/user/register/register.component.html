@@ -1,0 +1,54 @@
+  <!-- (submit)="" -->
+  <!-- vs ng submit 
+
+  submit event is default browser submission effect
+  ngSubmit is a custom event by angular
+    diffrence it stops browser from refreshing when we submit
+
+-->
+
+<app-alert *ngIf="showAlert" [color]="alertColor">
+{{ alertMsg }}
+</app-alert>
+<form 
+  [formGroup]="registerForm"
+  (ngSubmit)="register()"
+
+>
+    <!-- Name -->
+    <div class="mb-5">
+      <label class="inline-block mb-4">Name</label>
+        <app-input [control]="name" placeholder="Enter Name" [registerForm]="registerForm"></app-input>
+    </div>
+    <!-- Email -->
+    <div class="mb-5">
+      <label class="inline-block mb-4">Email</label>
+      <app-input [control]="email" type="email" placeholder="Enter Email" [registerForm]="registerForm"></app-input>
+    </div>
+    <!-- Age -->
+    <div class="mb-5">
+      <label class="inline-block mb-4">Age</label>
+      <app-input [control]="age" type="number" placeholder="Enter age"  [registerForm]="registerForm"></app-input>
+    </div>
+    <!-- Password -->
+    <div class="mb-5">
+      <label class="inline-block mb-4">Password</label>
+      <app-input [control]="password" type="password" placeholder="Enter password" [registerForm]="registerForm"></app-input>
+    </div>
+    <!-- Confirm Password -->
+    <div class="mb-5">
+      <label class="inline-block mb-4">Confirm Password</label>
+      <app-input [control]="confirm_password" type="password" placeholder="Confirm password" ></app-input>
+    </div>
+    <!-- Phone Number -->
+    <div class="mb-5">
+      <label class="inline-block mb-4">Phone Number</label>
+      <app-input [control]="phoneNumber" format="(000)000-0000" placeholder="Enter the phone number" [registerForm]="registerForm"></app-input>
+    </div>
+    <button type="submit" class="text-red-700 block w-full bg-indigo-402  py-1.5 px-3 rounded transition
+      hover:bg-indigo-502   disabled:border-red-500  disabled:bg-pink-500"
+      [disabled]="registerForm.invalid"
+      >
+      Submit
+    </button>
+  </form> 
