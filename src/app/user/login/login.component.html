@@ -1,19 +1,27 @@
-<form>
+<app-alert *ngIf="showAlert" [color]="alertColor">
+  {{ alertMsg }}
+  </app-alert>
+<form
+[formGroup]="loginForm"
+(ngSubmit)="login()"
+>
     <!-- Email -->
     <div class="mb-5">
       <label class="inline-block mb-4">Email</label>
-      <input type="email" class="block w-full py-3.5 px-3 text-gray-200 border border-gray-400 transition
-        duration-502 focus:outline-none rounded bg-transparent
-        focus:border-indigo-402" placeholder="Enter Email" />
+
+      <app-input [control]="email" placeholder="Enter Email" [registerForm]="loginForm"></app-input>
+     
     </div>
     <!-- Password -->
     <div class="mb-5">
       <label class="inline-block mb-4">Password</label>
-      <input type="password" class="block w-full py-3.5 px-3 text-gray-200 border border-gray-400 transition
-      duration-502 focus:outline-none rounded bg-transparent focus:border-indigo-400" placeholder="Password" />
+      <app-input [control]="password" placeholder="Enter password" [registerForm]="loginForm"></app-input>
     </div>
     <button type="submit" class="block w-full bg-indigo-402 text-white py-1.5 px-3 rounded transition
-      hover:bg-indigo-502">
+      hover:bg-indigo-502  disabled:border-red-500  disabled:bg-pink-500"
+     
+      [disabled]="inSubmission"
+      >
       Submit
     </button>
   </form>

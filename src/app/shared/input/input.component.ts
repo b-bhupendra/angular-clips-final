@@ -38,9 +38,9 @@ export class InputComponent {
   ])
 
   @Input() registerForm =  new FormGroup({
-    name : this.name,
+    name: this.name,
     email : this.email,
-    age   : this.age,
+    age : this.age,
     password : this.password,
     confirm_password : this.confirm_password,
     phoneNumber : this.phoneNumber,
