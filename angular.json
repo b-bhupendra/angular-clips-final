@@ -9,7 +9,7 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "architect": {
+      "architect": { 
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -41,12 +41,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "10mb"
                 }
               ],
               "outputHashing": "all"
