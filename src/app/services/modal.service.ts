@@ -47,7 +47,9 @@ export class ModalService {
   }
 
   toggleMode(key: string) {
-    console.log(this.visible)
+    
+    
+     console.log(this.visible)
     return this.keyExists(key) && (this.visible[key] = !this.visible[key])
   }
 

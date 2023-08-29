@@ -20,6 +20,7 @@ export class ModalComponent implements OnInit , OnDestroy {
   }
 
   toggleModal($event: Event){  
+    $event.preventDefault();
     this.modal.toggleMode(this.modalId)
   }
 

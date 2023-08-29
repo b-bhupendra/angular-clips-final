@@ -74,7 +74,7 @@ body {
   }
   
   /* Video.js CSS START */
-  .vjs-theme-forest {
+  /* .vjs-theme-forest {
     --vjs-theme-forest--primary: rgb(129,140,248);
   }
   
@@ -132,7 +132,7 @@ body {
   
   .video-js .vjs-time-control {
     font-size: 2em;
-  }
+  } */
   /* Video.js CSS END */
   
   .ghost {
